@@ -1,0 +1,38 @@
+{
+  "name": "dineshstack/laravel-audit",
+  "description": "Activity log & audit trail for Laravel 13 — free core on Packagist, pro dashboard on CodeCanyon",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["laravel","audit","activity-log","audit-trail","compliance"],
+  "authors": [{"name": "Dinesh Wijethunga", "homepage": "https://dineshwijethunga.me"}],
+  "require": {
+    "php":                  "^8.3",
+    "illuminate/support":   "^13.0",
+    "illuminate/database":  "^13.0",
+    "illuminate/http":      "^13.0",
+    "illuminate/console":   "^13.0",
+    "illuminate/queue":     "^13.0",
+    "guzzlehttp/guzzle":    "^7.8",
+    "league/csv":           "^9.15",
+    "dompdf/dompdf":        "^2.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^10.0",
+    "phpunit/phpunit":     "^11.0",
+    "mockery/mockery":     "^1.6"
+  },
+  "autoload": {
+    "psr-4": {"Dineshstack\\LaravelAudit\\": "src/"}
+  },
+  "autoload-dev": {
+    "psr-4": {"Dineshstack\\LaravelAudit\\Tests\\": "tests/"}
+  },
+  "extra": {
+    "laravel": {
+      "providers": ["Dineshstack\\LaravelAudit\\AuditServiceProvider"],
+      "aliases":   {"AuditLog": "Dineshstack\\LaravelAudit\\Facades\\AuditLog"}
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
