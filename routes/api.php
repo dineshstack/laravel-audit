@@ -6,7 +6,7 @@ use Dineshstack\LaravelAudit\Http\Controllers\AuditController;
 use Dineshstack\LaravelAudit\Http\Controllers\ExportController;
 use Dineshstack\LaravelAudit\Http\Controllers\AlertsController;
 
-Route::prefix('api/audit')->group(function () {
+Route::prefix(config('audit.route_prefix', 'api/audit'))->group(function () {
     // ── Feed & search ─────────────────────────────────────────────────────────
     Route::get('feed',        [AuditController::class, 'feed']);
     Route::get('entry/{id}',  [AuditController::class, 'show']);
